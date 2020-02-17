@@ -36,9 +36,19 @@ class Flight {
 
     }
 
+    //Métodos Getters e Setters:
+
+    public function setFlightNumber($flightNumber){
+        $this->flightNumber = $flightNumber;
+    }
+
     public function getFlightNumber()
     {
         return $this->flightNumber;
+    }
+
+    public function setCia($cia){
+        $this->cia = $cia;
     }
 
     public function getCia()
@@ -46,9 +56,17 @@ class Flight {
         return $this->cia;
     }
 
+    public function setDepartureAirport($departureAirport){
+        $this->departureAirport = $departureAirport;
+    }
+
     public function getDepartureAirport()
     {
         return $this->departureAirport;
+    }
+
+    public function setArrivalAirport($arrivalAirport){
+        $this->arrivalAirport = $arrivalAirport;
     }
 
     public function getArrivalAirport()
@@ -56,14 +74,27 @@ class Flight {
         return $this->arrivalAirport;
     }
 
+    public function setDepartureTime($departureTime){
+        $this->departureTime = $departureTime;
+    }
+
     public function getDepartureTime()
     {
         return $this->departureTime;
     }
 
+    public function setArrivalTime($arrivalTime){
+        $this->arrivalTime = $arrivalTime;
+    }
+
+
     public function getArrivalTime()
     {
         return $this->arrivalTime;
+    }
+
+    public function setValorTotal($valorTotal){
+        $this->valorTotal = $valorTotal;
     }
 
     public function getValorTotal()
@@ -71,15 +102,25 @@ class Flight {
         return $this->valorTotal;
     }
 
+    public function setLiveload($liveLoad){
+        $this->liveLoad = $liveLoad;
+    }
+
     public function getLiveload(){
         return $this->liveLoad;
     }
 
+    public function setBaggagePrice($baggagePrice){
+        $this->baggagePrice = $baggagePrice;
+    }
 
     public function getBaggagePrice(){
         return $this->baggagePrice;
     }
 
+    public function setLiveloadPrice($liveLoadPrice){
+        $this->liveLoadPrice = $liveLoadPrice;
+    }
 
     public function getLiveloadPrice(){
         return $this->liveLoadPrice;
