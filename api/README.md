@@ -10,6 +10,10 @@ Para rodar a API, é preciso:
 para que as dependências do projeto sejam instaladas.
 
 * Verificar credenciais da base de dados no arquivo .env, e criar o banco.
+* Executar o comando:  
+> php artisan key:generate  
+
+para que uma nova chave da aplicação seja criada.  
 
 * Executar o comando:
 > php artisan migrate  
