@@ -16,7 +16,7 @@ class PedidosController extends Controller
         ->join("pizzas","pizzas.id","=","pedidos.pizza_id")
         ->select(
             "pedidos.*",
-            "clientes.nome",
+            "clientes.*",
             "pizzas.*"
         )
         ->get();
@@ -30,7 +30,7 @@ class PedidosController extends Controller
         ->join("pizzas","pizzas.id","=","pedidos.pizza_id")
         ->select(
             "pedidos.*",
-            "clientes.nome",
+            "clientes.*",
             "pizzas.*"
         )
         ->get();
@@ -41,11 +41,15 @@ class PedidosController extends Controller
     public function create(Request $request)
     {
         try {
-            Pedidos::insert([
-                "id"               => $request['id'],
-                "telefone_cliente" => $request->endereco['telefone_cliente'], 
-                "pizza_id"         => $request->endereco['pizza_id']
-            ]); 
+            foreach ($request as $key => $value) {
+                Pedidos::insert([
+                    "telefone_cliente" => $value['telefone_cliente'], 
+                    "pizza_id"         => $value['pizza_id'],
+                    "quantidade"       => $value['quantidade'],
+                    "status"           => $value['status'],
+                    "valor_total"      => $value['valor_total'],
+                ]); 
+            }
 
             $retorno = [
                 "codigo"    => 0,
@@ -68,11 +72,13 @@ class PedidosController extends Controller
         try {
             Pedido::where("id", "=", $request->id)
             ->update([
-                "id"               => $request->id,
-                "telefone_cliente" => $request->telefone_cliente, 
-                "pizza_id"         => $request->pizza_id
+                "telefone_cliente" => $request['telefone_cliente'], 
+                "pizza_id"         => $request['pizza_id'],
+                "quantidade"       => $request['quantidade'],
+                "status"           => $request['status'],
+                "valor_total"      => $request['valor_total'],
             ]);
-            
+
             $retorno = [
                 "codigo"    => 0,
                 "message"   => "Edição realizada com sucesso!"

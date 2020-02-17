@@ -10,7 +10,10 @@ class Pedido extends Model
 
     protected $fillable = [
         'telefone_cliente', 
-        'pizza_id'
+        'pizza_id',
+        'quantidade',
+        'status',
+        'valor_total'
     ];
 
     public $timestamps = true;

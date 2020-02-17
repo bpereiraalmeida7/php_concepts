@@ -9,7 +9,7 @@ class Pizza extends Model
     protected $table = 'pizzas';
 
     protected $fillable = [
-        'id', 
+        'sabor', 
         'tamanho', 
         'valor'
     ];

@@ -9,9 +9,11 @@ class Cliente extends Model
     protected $table = 'clientes';
 
     protected $fillable = [
-        'id', 
         'nome', 
-        'telefone'
+        'telefone',
+        'CEP',
+        'rua',
+        'complemento'
     ];
 
     public $timestamps = true;
